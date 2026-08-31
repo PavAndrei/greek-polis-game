@@ -1,6 +1,22 @@
-import { useResources, resources } from '@/entities/game-session';
+import {
+  resources,
+  type ResourceIconId,
+  useResources,
+} from '@/entities/game-session';
 import { ResourceItem } from './resource-item';
 import { useTranslation } from 'react-i18next';
+import { ResourceGodsIcon } from './resource-gods-icon';
+import { ResourcePeopleIcon } from './resource-people-icon';
+import { ResourceSuppliesIcon } from './resource-supplies-icon';
+import { ResourceArmyIcon } from './resource-army-icon';
+import type { ComponentType, SVGProps } from 'react';
+
+const resourceIconById = {
+  gods: ResourceGodsIcon,
+  people: ResourcePeopleIcon,
+  army: ResourceArmyIcon,
+  supplies: ResourceSuppliesIcon,
+} satisfies Record<ResourceIconId, ComponentType<SVGProps<SVGSVGElement>>>;
 
 export const ResourcePanel = () => {
   const { t } = useTranslation();
@@ -8,12 +24,13 @@ export const ResourcePanel = () => {
   const resourcesValues = useResources();
 
   return (
-    <ul>
+    <ul className="flex justify-between items-center gap-2.5 border py-8">
       {resources.map((resource) => (
         <ResourceItem
           key={resource.id}
           label={t(resource.labelKey)}
           value={resourcesValues[resource.id]}
+          Icon={resourceIconById[resource.icon]}
         />
       ))}
     </ul>

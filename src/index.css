@@ -1,0 +1,27 @@
+@import 'tailwindcss';
+
+@theme {
+  /* Background colors */
+  --color-charcoal-umber: #2a211b;
+  --color-smoked-bronze: #3a2e26;
+
+  /* Red-figure vase painting */
+  --color-terracotta-red: #9b5a43;
+  --color-deep-burnt-sienna: #7c4434;
+  --color-fired-clay-brown: #5f3a2c;
+
+  /* Sand colors */
+  --color-light-sand: #e8dccb;
+  --color-aged-clay: #d2b49a;
+  --color-pale-terracotta-dust: #c4977a;
+
+  /* Accent colors */
+  --color-muted-ochre: #a3834a;
+  --color-olive-bronze: #6e6a49;
+  --color-dusty-wine: #6b3e44;
+}
+
+body {
+  background-color: var(--color-charcoal-umber);
+  color: var(--color-aged-clay);
+}

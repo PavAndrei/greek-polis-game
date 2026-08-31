@@ -7,6 +7,7 @@ export {
 export type { GameSessionState, GameSessionStore } from './model/game-session-types';
 export type {
   ResourceDefinition,
+  ResourceIconId,
   ResourceId,
   ResourceValues,
 } from './model/resource-types';
