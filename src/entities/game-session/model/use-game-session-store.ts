@@ -4,10 +4,10 @@ import type { GameSessionState, GameSessionStore } from './game-session-types';
 
 const gameSessionInitialState: GameSessionState = {
   resources: {
-    gods: 0,
-    people: 0,
-    army: 0,
-    supplies: 0,
+    gods: 50,
+    people: 50,
+    army: 50,
+    supplies: 50,
   },
 };
 

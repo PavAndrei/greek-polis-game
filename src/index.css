@@ -2,11 +2,11 @@
 
 @theme {
   /* Background colors */
-  --color-charcoal-umber: #2a211b;
-  --color-smoked-bronze: #3a2e26;
+  --color-charcoal-umber: #2a211b; /* main background color */
+  --color-smoked-bronze: #3a2e26; /* secondary background color like resource panel */
 
   /* Red-figure vase painting */
-  --color-terracotta-red: #9b5a43;
+  --color-terracotta-red: #9b5a43; /* borders, resource panel icons active language switcher buttons */
   --color-deep-burnt-sienna: #7c4434;
   --color-fired-clay-brown: #5f3a2c;
 

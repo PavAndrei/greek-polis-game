@@ -24,13 +24,14 @@ export const ResourcePanel = () => {
   const resourcesValues = useResources();
 
   return (
-    <ul className="flex justify-between items-center gap-2.5 border py-8">
+    <ul className="flex justify-between items-center gap-2.5 border border-terracotta-red rounded px-2 py-8 bg-smoked-bronze">
       {resources.map((resource) => (
         <ResourceItem
           key={resource.id}
           label={t(resource.labelKey)}
           value={resourcesValues[resource.id]}
           Icon={resourceIconById[resource.icon]}
+          iconColorClassName={'text-terracotta-red'}
         />
       ))}
     </ul>

@@ -1,17 +1,26 @@
 import type { ComponentType, SVGProps } from 'react';
+import { ResourceGaugeIcon } from './resource-gauge-icon';
 
 type ResourceItemProps = {
   label: string;
   value: number;
   Icon: ComponentType<SVGProps<SVGSVGElement>>;
+  iconColorClassName: string;
 };
 
-export const ResourceItem = ({ label, value, Icon }: ResourceItemProps) => {
+export const ResourceItem = ({
+  label,
+  value,
+  Icon,
+  iconColorClassName,
+}: ResourceItemProps) => {
   return (
     <li className="flex flex-col items-center gap-2">
-      <span className="flex h-12 w-12 items-center justify-center">
-        <Icon className="h-10 w-10 shrink-0" aria-hidden="true" focusable="false" />
-      </span>
+      <ResourceGaugeIcon
+        Icon={Icon}
+        value={value}
+        colorClassName={iconColorClassName}
+      />
       <div className="text-center">
         {label}: {value}
       </div>
