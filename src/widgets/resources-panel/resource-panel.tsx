@@ -1,8 +1,8 @@
 import {
   resources,
-  type ResourceIconId,
   useResources,
 } from '@/entities/game-session';
+import type { ResourceIconId } from '@/shared/model/resources';
 import { ResourceItem } from './resource-item';
 import { useTranslation } from 'react-i18next';
 import { ResourceGodsIcon } from './resource-gods-icon';

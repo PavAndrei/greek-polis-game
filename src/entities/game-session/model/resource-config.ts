@@ -1,4 +1,4 @@
-import { ResourceDefinition } from './resource-types';
+import type { ResourceDefinition } from '@/shared/model/resources';
 
 export const resources: ResourceDefinition[] = [
   {
