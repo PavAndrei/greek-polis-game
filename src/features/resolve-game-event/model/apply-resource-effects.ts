@@ -1,3 +1,4 @@
+import { clampResourceValue } from '@/entities/game-session';
 import type { ResourceEffects, ResourceValues } from '@/shared/model/resources';
 
 export const applyResourceEffects = (
@@ -13,7 +14,7 @@ export const applyResourceEffects = (
   for (const [resource, value] of Object.entries(effects)) {
     const key = resource as keyof ResourceValues;
 
-    nextResources[key] += value ?? 0;
+    nextResources[key] = clampResourceValue(nextResources[key] + (value ?? 0));
   }
 
   return nextResources;

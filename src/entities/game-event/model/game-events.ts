@@ -303,8 +303,8 @@ export const gameEvents: GameEvent[] = [
       textKey: 'events.hetaeraSeeksShelter.choices.left',
 
       effects: {
-        army: +1,
-        people: -1,
+        army: +10,
+        people: -10,
       },
 
       nextGameEventId: 'shepherd-divine-sheep',
@@ -314,8 +314,8 @@ export const gameEvents: GameEvent[] = [
       textKey: 'events.hetaeraSeeksShelter.choices.right',
 
       effects: {
-        people: +1,
-        army: +1,
+        people: +10,
+        army: +10,
       },
 
       nextGameEventId: 'shepherd-divine-sheep',
@@ -332,8 +332,8 @@ export const gameEvents: GameEvent[] = [
       textKey: 'events.shepherdDivineSheep.choices.left',
 
       effects: {
-        supplies: +1,
-        gods: -1,
+        supplies: +10,
+        gods: -10,
       },
 
       nextGameEventId: 'poet-ode',
@@ -343,8 +343,8 @@ export const gameEvents: GameEvent[] = [
       textKey: 'events.shepherdDivineSheep.choices.right',
 
       effects: {
-        people: +1,
-        supplies: -1,
+        people: +10,
+        supplies: -10,
       },
 
       nextGameEventId: 'poet-ode',
@@ -361,8 +361,8 @@ export const gameEvents: GameEvent[] = [
       textKey: 'events.poetOde.choices.left',
 
       effects: {
-        gods: +1,
-        people: -1,
+        gods: +10,
+        people: -10,
       },
 
       nextGameEventId: null,
@@ -372,8 +372,8 @@ export const gameEvents: GameEvent[] = [
       textKey: 'events.poetOde.choices.right',
 
       effects: {
-        people: +1,
-        supplies: -1,
+        people: +10,
+        supplies: -10,
       },
 
       nextGameEventId: null,

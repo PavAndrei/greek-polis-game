@@ -1,6 +1,7 @@
 import { create } from 'zustand';
 
 import type { GameSessionState, GameSessionStore } from './game-session-types';
+import { normalizeResources } from './resource-bounds';
 
 const gameSessionInitialState: GameSessionState = {
   year: 0,
@@ -20,11 +21,14 @@ export const useGameSessionStore = create<GameSessionStore>()((set) => ({
   ...gameSessionInitialState,
 
   setResources: (resources) => {
-    set({ resources });
+    set({ resources: normalizeResources(resources) });
   },
 
   setGameSession: (session) => {
-    set(session);
+    set({
+      ...session,
+      resources: normalizeResources(session.resources),
+    });
   },
 }));
 

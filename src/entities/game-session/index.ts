@@ -1,5 +1,9 @@
 export { resources } from './model/resource-config';
 export {
+  clampResourceValue,
+  normalizeResources,
+} from './model/resource-bounds';
+export {
   useGameSessionStore,
   useResources,
   useSetResources,
