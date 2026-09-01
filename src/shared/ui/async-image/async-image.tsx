@@ -65,7 +65,12 @@ export const AsyncImage = ({
   }, [src]);
 
   if (status !== 'loaded' || !loadedSrc) {
-    return <div className={fallbackClassName} aria-label={alt} />;
+    return (
+      <div
+        className={`${fallbackClassName} ${status === 'loading' ? 'animate-pulse' : ''}`}
+        aria-label={alt}
+      />
+    );
   }
 
   return (
