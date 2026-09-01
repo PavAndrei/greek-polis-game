@@ -1,5 +1,5 @@
 export interface Character {
   id: string;
-  name: string;
-  portrait: string;
+  nameKey: string;
+  portrait?: string;
 }

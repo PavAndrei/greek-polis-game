@@ -2,7 +2,7 @@ import type { GameEvent } from '@/entities/game-event';
 import type { ChoiceDirection } from '@/shared/model/game';
 
 import { applyResourceEffects } from './apply-resource-effects';
-import { GameSessionState } from '@/entities/game-session';
+import type { GameSessionState } from '@/entities/game-session';
 
 export const resolveGameEvent = (
   session: GameSessionState,

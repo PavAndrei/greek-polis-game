@@ -1,4 +1,4 @@
-import { GameEvent } from './game-event-types';
+import type { GameEvent } from './game-event-types';
 
 export const gameEvents: GameEvent[] = [
   {
@@ -6,10 +6,10 @@ export const gameEvents: GameEvent[] = [
     type: 'choice',
     characterId: 'farmer',
 
-    text: 'Крестьянин пришёл с жалобой: его осёл заговорил и требует лучшую еду, отдельный сарай и выходной по воскресеньям. Крестьянин в шоке.',
+    textKey: 'events.talkingDonkey.text',
 
     leftChoice: {
-      text: 'Приказать осла казнить за богохульство',
+      textKey: 'events.talkingDonkey.choices.left',
 
       effects: {
         gods: 15,
@@ -20,7 +20,7 @@ export const gameEvents: GameEvent[] = [
     },
 
     rightChoice: {
-      text: 'Нанять осла советником по сельскому хозяйству',
+      textKey: 'events.talkingDonkey.choices.right',
 
       effects: {
         supplies: 30,
@@ -35,10 +35,10 @@ export const gameEvents: GameEvent[] = [
     type: 'choice',
     characterId: 'farmer',
 
-    text: 'На следующее утро крестьянин возвращается. Ночью все ослы в полисе одновременно начали кричать ваше имя. Жители считают это дурным знаком.',
+    textKey: 'events.donkeyExecution.text',
 
     leftChoice: {
-      text: 'Запретить обсуждать произошедшее',
+      textKey: 'events.donkeyExecution.choices.left',
 
       effects: {
         people: -10,
@@ -49,7 +49,7 @@ export const gameEvents: GameEvent[] = [
     },
 
     rightChoice: {
-      text: 'Объявить день памяти осла',
+      textKey: 'events.donkeyExecution.choices.right',
 
       effects: {
         people: 15,
@@ -64,10 +64,10 @@ export const gameEvents: GameEvent[] = [
     type: 'choice',
     characterId: 'farmer',
 
-    text: 'Прошёл год. Осёл оказался неожиданно талантливым советником. Урожай вырос, но теперь он требует место на заседаниях совета и золотую табличку со своим именем.',
+    textKey: 'events.donkeyAdvisor.text',
 
     leftChoice: {
-      text: 'Напомнить ослу его место',
+      textKey: 'events.donkeyAdvisor.choices.left',
 
       effects: {
         people: -10,
@@ -78,7 +78,7 @@ export const gameEvents: GameEvent[] = [
     },
 
     rightChoice: {
-      text: 'Выдать золотую табличку',
+      textKey: 'events.donkeyAdvisor.choices.right',
 
       effects: {
         people: 10,
@@ -91,13 +91,12 @@ export const gameEvents: GameEvent[] = [
   {
     id: 'oracle-arrives',
     type: 'choice',
-
     characterId: 'oracle',
 
-    text: 'В полис прибывает оракул. Он утверждает, что боги обеспокоены вашими недавними решениями и требуют жертвоприношения.',
+    textKey: 'events.oracleArrives.text',
 
     leftChoice: {
-      text: 'Отказать оракулу',
+      textKey: 'events.oracleArrives.choices.left',
 
       effects: {
         gods: -20,
@@ -108,7 +107,7 @@ export const gameEvents: GameEvent[] = [
     },
 
     rightChoice: {
-      text: 'Подготовить жертвоприношение',
+      textKey: 'events.oracleArrives.choices.right',
 
       effects: {
         gods: 20,

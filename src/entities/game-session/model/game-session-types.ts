@@ -1,4 +1,4 @@
-import { ChoiceDirection } from '@/shared/model/game';
+import type { ChoiceDirection } from '@/shared/model/game';
 import type { ResourceValues } from '@/shared/model/resources';
 
 export interface GameHistoryEntry {

@@ -3,7 +3,7 @@ import type { ResourceEffects } from '@/shared/model/resources';
 export type GameEventType = 'choice' | 'info';
 
 export interface GameEventChoice {
-  text: string;
+  textKey: string;
   effects?: ResourceEffects;
 
   nextGameEventId?: string | null;
@@ -15,7 +15,7 @@ export interface GameEvent {
 
   characterId?: string;
 
-  text: string;
+  textKey: string;
 
   leftChoice?: GameEventChoice;
   rightChoice?: GameEventChoice;

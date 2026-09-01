@@ -7,7 +7,7 @@ import {
 
 import { LanguageSwitcher } from '@/features/language-switcher';
 import { resolveGameEvent } from '@/features/resolve-game-event';
-import { ChoiceDirection } from '@/shared/model/game';
+import type { ChoiceDirection } from '@/shared/model/game';
 import { GameEventCard } from '@/widgets/game-event-card';
 import { ResourcePanel } from '@/widgets/resources-panel';
 // import { useEffect } from 'react';

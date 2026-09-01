@@ -1,4 +1,4 @@
-import { ResourceEffects, ResourceValues } from '@/shared/model/resources';
+import type { ResourceEffects, ResourceValues } from '@/shared/model/resources';
 
 export const applyResourceEffects = (
   resources: ResourceValues,
