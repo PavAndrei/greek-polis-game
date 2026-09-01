@@ -1,6 +1,7 @@
 import type { Character } from '@/entities/character';
 import type { GameEvent } from '@/entities/game-event';
 import type { ChoiceDirection } from '@/shared/model/game';
+import { AsyncImage } from '@/shared/ui/async-image';
 import { useTranslation } from 'react-i18next';
 
 interface GameEventCardProps {
@@ -31,10 +32,11 @@ export const GameEventCard = ({
 
       {character?.portrait && characterName && (
         <div className="flex min-h-0 flex-1 justify-center border-t border-fired-clay-brown bg-charcoal-umber px-4 py-3">
-          <img
+          <AsyncImage
             className="aspect-[3/4] h-full max-h-full rounded-md object-cover"
             src={character.portrait}
             alt={characterName}
+            fallbackClassName="aspect-[3/4] h-full max-h-full rounded-md border border-fired-clay-brown bg-smoked-bronze"
           />
         </div>
       )}

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { AsyncImage } from '@/shared/ui/async-image';
 import { useTranslation } from 'react-i18next';
 
 interface GameOverCardProps {
@@ -17,7 +17,6 @@ export const GameOverCard = ({
   onRestart,
 }: GameOverCardProps) => {
   const { t } = useTranslation();
-  const [isImageAvailable, setIsImageAvailable] = useState(true);
   const title = t(titleKey);
 
   return (
@@ -37,16 +36,12 @@ export const GameOverCard = ({
       </div>
 
       <div className="flex min-h-0 flex-1 justify-center border-t border-fired-clay-brown bg-charcoal-umber px-4 py-3">
-        {isImageAvailable ? (
-          <img
-            className="aspect-[3/4] h-full max-h-full rounded-md object-cover"
-            src={image}
-            alt={title}
-            onError={() => setIsImageAvailable(false)}
-          />
-        ) : (
-          <div className="aspect-[3/4] h-full max-h-full rounded-md border border-fired-clay-brown bg-smoked-bronze" />
-        )}
+        <AsyncImage
+          className="aspect-[3/4] h-full max-h-full rounded-md object-cover"
+          src={image}
+          alt={title}
+          fallbackClassName="aspect-[3/4] h-full max-h-full rounded-md border border-fired-clay-brown bg-smoked-bronze"
+        />
       </div>
 
       <div className="mt-auto grid h-24 shrink-0 border-t border-fired-clay-brown p-4">
