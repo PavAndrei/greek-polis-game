@@ -5,6 +5,57 @@ export const en = {
     army: 'Army',
     supplies: 'Supplies',
   },
+  gameOver: {
+    year: 'Year {{year}}',
+    restart: 'Start again',
+    endings: {
+      godsZero: {
+        title: 'The gods turned away',
+        description:
+          'The gods have finally lost all interest in you. The people decided that a ruler ignored by the entire Olympus probably has no idea what they are doing.',
+      },
+      godsFull: {
+        title: 'Too close to the gods',
+        description:
+          'Athena demands wisdom, Ares demands war, Dionysus demands a festival, and Zeus simply demands. Governing the city has been postponed indefinitely.',
+      },
+      peopleZero: {
+        title: 'The polis emptied',
+        description:
+          'The people have finally decided that life under your rule is overrated. Some fled, some rebelled, and others simply claimed they had never lived here.',
+      },
+      peopleFull: {
+        title: 'Rule of the crowd',
+        description:
+          'The assembly runs around the clock, with votes on everything from the shape of bread to the acceptable volume of roosters at dawn. Eventually, everyone realized they no longer needed a ruler.',
+      },
+      armyZero: {
+        title: 'No one left to defend the walls',
+        description:
+          "The city's army has ceased to exist. The last hoplite sold his shield, used his spear to support a grapevine, and announced that farming had always been his true calling.",
+      },
+      armyFull: {
+        title: 'The army seized power',
+        description:
+          'The army has grown stronger than the state itself. Hoplites now guard the markets, temples, taverns, and even the bread queue.',
+      },
+      suppliesZero: {
+        title: 'Famine',
+        description:
+          'The supplies are gone. Completely. The final olive was displayed in the city square under the protection of three guards while citizens argued over who deserved it.',
+      },
+      suppliesFull: {
+        title: 'Abundance ruined the polis',
+        description:
+          'The city did not fall to famine, war, or divine wrath. It was slowly buried beneath its own supplies.',
+      },
+    },
+  },
+  endOfContent: {
+    title: 'The chronicle ends here... for now.',
+    description:
+      'The polis still stands, the gods are not completely furious, and the chronicler has simply run out of tablets.',
+  },
   characters: {
     farmer: {
       name: 'Farmer',

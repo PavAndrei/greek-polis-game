@@ -3,7 +3,7 @@ import { create } from 'zustand';
 import type { GameSessionState, GameSessionStore } from './game-session-types';
 import { normalizeResources } from './resource-bounds';
 
-const gameSessionInitialState: GameSessionState = {
+const getGameSessionInitialState = (): GameSessionState => ({
   year: 0,
 
   resources: {
@@ -14,11 +14,15 @@ const gameSessionInitialState: GameSessionState = {
   },
 
   currentGameEventId: 'talking-donkey',
+
   history: [],
-};
+
+  status: 'playing',
+  gameOverReason: null,
+});
 
 export const useGameSessionStore = create<GameSessionStore>()((set) => ({
-  ...gameSessionInitialState,
+  ...getGameSessionInitialState(),
 
   setResources: (resources) => {
     set({ resources: normalizeResources(resources) });
@@ -30,6 +34,10 @@ export const useGameSessionStore = create<GameSessionStore>()((set) => ({
       resources: normalizeResources(session.resources),
     });
   },
+
+  resetGameSession: () => {
+    set(getGameSessionInitialState());
+  },
 }));
 
 export const useSetResources = () =>
@@ -40,3 +48,6 @@ export const useResources = () =>
 
 export const useSetGameSession = () =>
   useGameSessionStore((state) => state.setGameSession);
+
+export const useResetGameSession = () =>
+  useGameSessionStore((state) => state.resetGameSession);

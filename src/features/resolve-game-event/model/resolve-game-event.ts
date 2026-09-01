@@ -1,8 +1,9 @@
 import type { GameEvent } from '@/entities/game-event';
+import type { GameSessionState } from '@/entities/game-session';
 import type { ChoiceDirection } from '@/shared/model/game';
 
 import { applyResourceEffects } from './apply-resource-effects';
-import type { GameSessionState } from '@/entities/game-session';
+import { getGameOverReason } from './get-game-over-reason';
 
 export const resolveGameEvent = (
   session: GameSessionState,
@@ -15,12 +16,18 @@ export const resolveGameEvent = (
     return session;
   }
 
+  const nextResources = applyResourceEffects(session.resources, choice.effects);
+
+  const gameOverReason = getGameOverReason(nextResources);
+
+  const isGameOver = gameOverReason !== null;
+
   return {
     ...session,
 
     year: session.year + 1,
 
-    resources: applyResourceEffects(session.resources, choice.effects),
+    resources: nextResources,
 
     history: [
       ...session.history,
@@ -31,6 +38,10 @@ export const resolveGameEvent = (
       },
     ],
 
-    currentGameEventId: choice.nextGameEventId ?? null,
+    status: isGameOver ? 'game-over' : 'playing',
+
+    gameOverReason,
+
+    currentGameEventId: isGameOver ? null : (choice.nextGameEventId ?? null),
   };
 };

@@ -1,10 +1,16 @@
-import { GamePage } from '@/pages/game';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router';
+
+import { GameOverPage, GamePage } from '@/pages';
 
 function App() {
   return (
-    <div>
-      <GamePage />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<GamePage />} />
+        <Route path="/game-over" element={<GameOverPage />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
