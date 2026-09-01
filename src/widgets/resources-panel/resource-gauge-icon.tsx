@@ -26,14 +26,14 @@ export const ResourceGaugeIcon = ({
   className = '',
 }: ResourceGaugeIconProps) => {
   const fillPercent = getFillPercent(value, maxValue);
-  const rootClassName = ['relative h-12 w-12 shrink-0', className]
+  const rootClassName = ['relative h-10 w-10 shrink-0 sm:h-12 sm:w-12', className]
     .filter(Boolean)
     .join(' ');
 
   return (
     <span className={rootClassName}>
       <Icon
-        className={`absolute inset-1 h-10 w-10 ${emptyColorClassName}`}
+        className={`absolute inset-1 h-8 w-8 sm:h-10 sm:w-10 ${emptyColorClassName}`}
         aria-hidden="true"
         focusable="false"
       />
@@ -43,7 +43,7 @@ export const ResourceGaugeIcon = ({
         style={{ height: `${fillPercent}%` }}
       >
         <Icon
-          className={`absolute bottom-1 left-1 h-10 w-10 ${colorClassName}`}
+          className={`absolute bottom-1 left-1 h-8 w-8 sm:h-10 sm:w-10 ${colorClassName}`}
           aria-hidden="true"
           focusable="false"
         />

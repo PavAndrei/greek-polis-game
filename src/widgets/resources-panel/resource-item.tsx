@@ -15,13 +15,13 @@ export const ResourceItem = ({
   iconColorClassName,
 }: ResourceItemProps) => {
   return (
-    <li className="flex flex-col items-center gap-2">
+    <li className="flex min-w-0 flex-col items-center gap-1.5">
       <ResourceGaugeIcon
         Icon={Icon}
         value={value}
         colorClassName={iconColorClassName}
       />
-      <div className="text-center">
+      <div className="max-w-full truncate text-center text-xs sm:text-sm">
         {label}: {value}
       </div>
     </li>

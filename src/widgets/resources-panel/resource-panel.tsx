@@ -24,7 +24,7 @@ export const ResourcePanel = () => {
   const resourcesValues = useResources();
 
   return (
-    <ul className="flex justify-between items-center gap-2.5 border border-terracotta-red rounded px-2 py-8 bg-smoked-bronze">
+    <ul className="grid shrink-0 grid-cols-4 items-center gap-2 rounded border border-terracotta-red bg-smoked-bronze px-2 py-3">
       {resources.map((resource) => (
         <ResourceItem
           key={resource.id}

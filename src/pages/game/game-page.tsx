@@ -40,14 +40,16 @@ export const GamePage = () => {
   // }, [currentGameSession]);
 
   return (
-    <div className="max-w-362.5 w-full mx-auto px-2.5 flex flex-col gap-8 py-5">
-      <LanguageSwitcher />
-      <ResourcePanel />
-      <GameEventCard
-        event={event}
-        character={character}
-        onChoice={handleChoice}
-      />
-    </div>
+    <main className="h-dvh overflow-hidden px-2 py-3 sm:px-4">
+      <div className="mx-auto flex h-full w-full max-w-5xl flex-col gap-3">
+        <LanguageSwitcher />
+        <ResourcePanel />
+        <GameEventCard
+          event={event}
+          character={character}
+          onChoice={handleChoice}
+        />
+      </div>
+    </main>
   );
 };
