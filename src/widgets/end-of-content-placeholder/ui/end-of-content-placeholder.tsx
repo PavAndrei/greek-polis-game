@@ -16,12 +16,12 @@ export const EndOfContentPlaceholder = ({
 
   return (
     <article className="mx-auto flex min-h-0 w-full max-w-2xl flex-1 flex-col overflow-hidden rounded-lg border border-fired-clay-brown bg-smoked-bronze shadow-2xl shadow-black/20">
-      <div className="flex h-44 shrink-0 flex-col gap-3 p-4 sm:h-48 sm:p-5">
+      <div className="flex h-56 shrink-0 flex-col gap-3 p-4 sm:h-48 sm:p-5">
         <h2 className="h-16 overflow-hidden text-center text-xl font-semibold text-light-sand sm:text-2xl">
           {title}
         </h2>
 
-        <p className="flex flex-1 items-center justify-center overflow-hidden text-center text-sm leading-6 text-aged-clay sm:text-base sm:leading-7">
+        <p className="flex flex-1 items-center justify-center overflow-hidden text-center text-sm leading-5 text-aged-clay sm:text-base sm:leading-7">
           {t('endOfContent.description')}
         </p>
       </div>
